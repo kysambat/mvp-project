@@ -1,13 +1,15 @@
 import express from "express";
 import postgres from "postgres";
 import { readFile } from "node:fs/promises"
+import cors from "cors"
 
 const app = express();
 
-const sql = postgres("postgres://recipe_tracker_user:CQftrRf7Yf19U35oQde9eVknhVN48DBF@dpg-cegvun4gqg438rg6676g-a.oregon-postgres.render.com/recipe_tracker?ssl=true");
+const sql = postgres(process.env.DATABASE_URL);
 
 app.use(express.json());
 app.use(express.static("client"))
+app.use(cors())
 
 
 app.get("/recipe", (req,res) => {
