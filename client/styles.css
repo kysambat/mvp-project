@@ -1,0 +1,11 @@
+body{
+    background-color:bisque
+}
+
+.container{
+    font-size: 14px;
+    font-family: sans-serif;
+    padding:10px;
+    margin-left: auto;
+    margin-right: auto;
+}
