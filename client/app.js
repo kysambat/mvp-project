@@ -12,7 +12,7 @@ const form = document.getElementById('form')
 });
 */
 
-fetch("http://localhost:9000/recipe")
+fetch("/recipe")
     .then((data) => {
         return data.json();
     }).then((objectData) => {
@@ -41,7 +41,7 @@ form.addEventListener('submit', (event)=> {
     const newRecipe = { dish:data.get('dish'), ingredients:data.get('ingredients'), instructions:data.get('instructions') }
     console.log(newRecipe);
 
-    fetch("http://localhost:9000/recipe", {
+    fetch("/recipe", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
