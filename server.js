@@ -3,7 +3,8 @@ import postgres from "postgres";
 import { readFile } from "node:fs/promises"
 
 const app = express();
-const sql = postgres({ database: 'recipe_tracker'});
+
+const sql = postgres("postgres://recipe_tracker_user:CQftrRf7Yf19U35oQde9eVknhVN48DBF@dpg-cegvun4gqg438rg6676g-a.oregon-postgres.render.com/recipe_tracker?ssl=true");
 
 app.use(express.json());
 app.use(express.static("client"))
